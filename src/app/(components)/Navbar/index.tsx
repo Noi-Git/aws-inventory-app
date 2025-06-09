@@ -2,7 +2,7 @@
 
 import { Bell, Menu, Sun } from 'lucide-react'
 import React from 'react'
-import { navSearch } from '../../../styles/navbar_style'
+import { navSearch, notificationBell } from '../../../styles/navbar_style'
 
 const Navbar = () => {
   return (
@@ -38,6 +38,10 @@ const Navbar = () => {
             <button className='null'>
               <Sun className='cursor-pointer text-gray-500' size={24} />
             </button>
+          </div>
+          <div className='relative'>
+            <Bell className='cursor-pointer text-gray-500' size={24} />
+            <span className={notificationBell}>3</span>
           </div>
         </div>
       </div>
