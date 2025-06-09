@@ -1,8 +1,9 @@
 'use client'
 
-import { Bell, Menu, Sun } from 'lucide-react'
+import { Bell, Menu, Settings, Sun } from 'lucide-react'
 import React from 'react'
 import { navSearch, notificationBell } from '../../../styles/navbar_style'
+import Link from 'next/link'
 
 const Navbar = () => {
   return (
@@ -19,16 +20,17 @@ const Navbar = () => {
         >
           <Menu className='w-4 h-4' />
         </button>
-      </div>
-      {/* Search bar */}
-      <div className='relative'>
-        <input
-          className={navSearch}
-          type='search'
-          placeholder='Search groups & products'
-        />
-        <div className='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none:'>
-          <Bell className='text-gray-500' size={20} />
+
+        {/* Search bar */}
+        <div className='relative'>
+          <input
+            className={navSearch}
+            type='search'
+            placeholder='Search groups & products'
+          />
+          <div className='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none:'>
+            <Bell className='text-gray-500' size={20} />
+          </div>
         </div>
       </div>
       {/* RIGHT SIDE NAV */}
@@ -44,7 +46,14 @@ const Navbar = () => {
             <span className={notificationBell}>3</span>
           </div>
           <hr className='w-0 h-7 border border-solid border-l border-gray-300 mx-3' />
+          <div className='flex items-center gap-3 cursor-pointer'>
+            <div className='w-9 h-9'>image</div>
+            <span className='font-semibold'>Noi</span>
+          </div>
         </div>
+        <Link href='/settings'>
+          <Settings className='cursor-pointer text-gray-500' size={24} />
+        </Link>
       </div>
     </div>
   )
