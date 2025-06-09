@@ -43,6 +43,7 @@ const Navbar = () => {
             <Bell className='cursor-pointer text-gray-500' size={24} />
             <span className={notificationBell}>3</span>
           </div>
+          <hr className='w-0 h-7 border border-solid border-l border-gray-300 mx-3' />
         </div>
       </div>
     </div>
