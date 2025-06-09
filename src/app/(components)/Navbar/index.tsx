@@ -2,7 +2,11 @@
 
 import { Bell, Menu, Settings, Sun } from 'lucide-react'
 import React from 'react'
-import { navSearch, notificationBell } from '../../../styles/navbar_style'
+import {
+  hamburgerMenu,
+  navSearch,
+  notificationBell,
+} from '../../../styles/navbar_style'
 import Link from 'next/link'
 
 const Navbar = () => {
@@ -11,13 +15,7 @@ const Navbar = () => {
       {/* LEFT SIDE NAV */}
       {/* Menu */}
       <div className='flex justify-between items-center gap-5'>
-        <button
-          className={`px-3
-          bg-gray-100
-          rounded-full
-          hover:bg-blue-100`}
-          onClick={() => {}}
-        >
+        <button className={hamburgerMenu} onClick={() => {}}>
           <Menu className='w-4 h-4' />
         </button>
 
