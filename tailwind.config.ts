@@ -43,8 +43,23 @@ const generateThemeObject = (colors: any, mapping: any, invert = false) => {
 const lightTheme = generateThemeObject(colors, shadeMapping)
 const darkTheme = generateThemeObject(colors, shadeMapping, true)
 
+const themes = {
+  //pass this as an arg to the plugins
+  //setup auto dark mode
+  light: {
+    //when active it will use the value provide in the lightTheme above
+    ...lightTheme,
+    white: '#ffffff',
+  },
+  dark: {
+    ...darkTheme,
+    white: colors.gray['950'],
+    black: colors.gray['50'],
+  },
+}
+
 const config: Config = {
-  darkMode: 'class',
+  darkMode: 'class', //this will allow us to use dark mode
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -59,7 +74,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [createThemes(themes)],
 }
 
 export default config
